@@ -144,7 +144,7 @@ const Home = () => {
               data-item-name="Anti Trump Sticker"
               data-item-id="NoTrump123"
               data-item-image={imgUrl}
-              data-item-url="http://localhost:3000/#!/"
+              data-item-url="https://boring-saha-7b895e.netlify.com/#!/"
               data-item-price="19.99"
             >
               Buy it for $19.99

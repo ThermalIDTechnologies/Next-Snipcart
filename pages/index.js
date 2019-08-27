@@ -55,7 +55,7 @@ const Home = () => {
 
         <div className="row">
           <div className="card">
-            <CloudinaryContext cloudName="crjars">
+            <CloudinaryContext cloudName="crjars" secure>
               <Image
                 publicId="sickfits/190815164405-ammbmfoapae4jv05n2sfrdny"
                 width="0.9"

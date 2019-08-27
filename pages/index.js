@@ -146,6 +146,9 @@ const Home = () => {
               data-item-image={imgUrl}
               data-item-url="https://boring-saha-7b895e.netlify.com"
               data-item-price="19.99"
+              data-item-custom1-type="hidden"
+              data-item-custom1-name="Img Url"
+              data-item-custom1-value={imgUrl}
             >
               Buy it for $19.99
             </button>

@@ -6,8 +6,9 @@ import Nav from "../components/nav";
 
 const Home = () => {
   const [text, setText] = useState("Text");
+  console.log(text);
   const [fontFamily, setFontFamily] = useState("Impact");
-  const [fontSize, setFontSize] = useState(48);
+  const [fontSize, setFontSize] = useState(150);
   const [color, setColor] = useState("red");
   const [gravity, setGravity] = useState("east");
   const [imgUrl, setImgUrl] = useState("");
@@ -15,7 +16,8 @@ const Home = () => {
     mode: "onChange"
   });
   const onSubmit = data => {
-    setText(data.text);
+    const someText = data.text.replace(/(\r\n|\n|\r)/gm,"%0A");
+    setText(someText);
     setFontFamily(data.fontFamily);
     setFontSize(data.fontSize);
     setColor(data.color);
@@ -60,16 +62,15 @@ const Home = () => {
               >
                 <Transformation
                   width="300"
-                  height="145"
                   overlay={{
                     fontFamily: `${fontFamily}`,
-                    fontSize: `${fontSize}`,
+                    fontSize: 150,
                     fontWeight: "bold",
                     text: `${text}`
                   }}
                   gravity={gravity}
                   x="15"
-                  crop="fit"
+                  crop="scale"
                   color={color}
                 />
 
@@ -79,7 +80,7 @@ const Home = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <>
                 <label htmlFor="text">Customize Text</label>
-                <input
+                <textarea
                   name="text"
                   placeholder="text"
                   ref={register({ required: true })}
@@ -89,7 +90,7 @@ const Home = () => {
                 )}
               </>
               <br />
-              <>
+              {/* <>
                 <label htmlFor="fontSize">Change Font Size</label>
                 <select name="fontSize" ref={register}>
                   <option value="6">6</option>
@@ -109,7 +110,7 @@ const Home = () => {
                   <option value="72">72</option>
                 </select>
               </>
-              <br />
+              <br /> */}
               <>
                 <label htmlFor="fontFamily">Change Font Family</label>
                 <select name="fontFamily" ref={register}>
@@ -143,6 +144,7 @@ const Home = () => {
               data-item-image={imgUrl}
               data-item-url="https://boring-saha-7b895e.netlify.com"
               data-item-price="19.99"
+              data-item-categories="stickers"
               data-item-custom1-type="hidden"
               data-item-custom1-name="Img Url"
               data-item-custom1-value={imgUrl}

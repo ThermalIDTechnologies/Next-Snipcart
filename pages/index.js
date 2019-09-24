@@ -143,7 +143,7 @@ const Home = () => {
               data-item-id="NoTrump123"
               data-item-image={imgUrl}
               data-item-url="https://boring-saha-7b895e.netlify.com"
-              data-item-price="19.99"
+              data-item-price="8.12"
               data-item-categories="stickers"
               data-item-custom1-type="hidden"
               data-item-custom1-name="Img Url"
